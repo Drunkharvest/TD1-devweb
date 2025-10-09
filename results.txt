@@ -1,0 +1,12 @@
+Objet student: {
+  "name": "Marie",
+  "age": 21,
+  "courses": [
+    "Math",
+    "Physics",
+    "Chemistry"
+  ],
+  "grade": "A"
+}
+Index de Physics: 1
+Premiers cours: ["Math","Physics"]
