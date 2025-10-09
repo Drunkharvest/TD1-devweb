@@ -1,1 +1,35 @@
 console.log("hello world")
+// Étape 1 : Création de l'objet student
+const student = {
+  name: "Marie",
+  age: 20,
+  courses: []
+};
+
+// Étape 2 : Modification de l'objet
+student.age = 21;
+student.grade = "A";
+
+// Étape 3 : Manipulation du tableau courses
+student.courses.push("Math", "Physics", "Chemistry");
+
+// indexOf pour "Physics"
+const indexPhysics = student.courses.indexOf("Physics");
+
+// slice pour obtenir les deux premiers éléments
+const premiersCours = student.courses.slice(0, 2);
+
+// Étape 4 : Affichage des résultats
+console.log("Objet student modifié :", student);
+console.log("Index de 'Physics' :", indexPhysics);
+console.log("Premiers cours (slice) :", premiersCours);
+
+// Étape 5 : Sauvegarde dans un fichier (results.txt)
+const fs = require("fs");
+
+let contenu = `Objet student: ${JSON.stringify(student, null, 2)}\n`;
+contenu += `Index de Physics: ${indexPhysics}\n`;
+contenu += `Premiers cours: ${JSON.stringify(premiersCours)}\n`;
+
+fs.writeFileSync("results.txt", contenu, "utf-8");
+console.log
