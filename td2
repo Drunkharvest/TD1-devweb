@@ -1,0 +1,36 @@
+const fs = require('fs');
+
+// Étape 1 : Création de l'objet student
+let student = {
+    name: "Marie",
+    age: 20,
+    courses: []
+};
+
+// Étape 2 : Modification de l'objet
+student.age = 21;
+student.grade = "A";
+
+// Étape 3 : Manipulation du tableau courses
+// Ajout des cours avec push
+student.courses.push("Math", "Physics", "Chemistry");
+
+// Trouver l'index de "Physics"
+let indexPhysics = student.courses.indexOf("Physics");
+
+// Créer un nouveau tableau avec les deux premiers éléments
+let premiersCours = student.courses.slice(0, 2);
+
+// Étape 4 : Affichage des résultats dans la console
+console.log("Objet student complet:");
+console.log(student);
+console.log("\nIndex de 'Physics':", indexPhysics);
+console.log("\nTableau créé avec slice (2 premiers cours):", premiersCours);
+
+// Étape 5 : Sauvegarde dans un fichier results.txt
+let contenu = `Objet student: ${JSON.stringify(student, null, 2)}\n`;
+contenu += `Index de Physics: ${indexPhysics}\n`;
+contenu += `Premiers cours: ${JSON.stringify(premiersCours)}\n`;
+
+fs.writeFileSync('results.txt', contenu);
+console.log('\nFichier results.txt créé avec succès !');
